@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
-// import { IbukiComponent } from './ibuki.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
+    HttpClientModule
   ],
   declarations: [],
-  exports: []
+  exports: [HttpClientModule]
 })
 export class IbukiModule { }
