@@ -116,6 +116,46 @@
           }
         }
       }
+    },
+    "ibuki": {
+      "root": "projects/ibuki",
+      "sourceRoot": "projects/ibuki/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ibuki/tsconfig.lib.json",
+            "project": "projects/ibuki/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/ibuki/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ibuki/src/test.ts",
+            "tsConfig": "projects/ibuki/tsconfig.spec.json",
+            "karmaConfig": "projects/ibuki/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ibuki/tsconfig.lib.json",
+              "projects/ibuki/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "ibuki-demo"
